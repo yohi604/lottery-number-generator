@@ -1,0 +1,7 @@
+# Project Pages serves this at /lottery-number-generator/robots.txt.
+# Crawlers only honor /robots.txt at the HOST root, not this subdirectory.
+# Ready for a future domain-root deployment; submit sitemap directly for now.
+User-agent: *
+Allow: /
+
+Sitemap: https://yohi604.github.io/lottery-number-generator/sitemap.xml
