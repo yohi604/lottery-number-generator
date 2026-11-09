@@ -84,3 +84,10 @@ GitHub Free의 Pages는 공개 저장소에서 사용합니다. `.nojekyll`은 �
 - [Search Console 소유권 확인](https://support.google.com/webmasters/answer/9008080?hl=ko)
 
 본 사이트는 동행복권의 공식 서비스가 아니며, 번호 생성 기능은 오락과 편의를 위한 것입니다. 모든 유효한 번호 조합의 당첨 확률은 동일하며, 번호 생성 방식이 당첨 가능성을 높여주지 않습니다.
+
+## 블랙·골드 디자인
+
+- 기본 레이아웃은 `docs/assets/styles.css`, 블랙·골드 테마는 `docs/assets/lounge.css`에서 수정합니다.
+- 왕관·월계수·클로버·버튼 아이콘은 `docs/assets/icons.svg`의 벡터로 표현합니다. 번호 공과 연금복권 타일은 CSS이며 이미지 교체가 필요하지 않습니다.
+- 라운지 사진은 아직 사용하지 않습니다. 글자·숫자·버튼이 없는 가로 배경을 추가할 때 `docs/assets/`에 넣고 `lounge.css`의 `--lounge-image`에 해당 파일의 상대 URL을 지정하면 됩니다. 현재는 CSS 조명과 녹색 배경을 사용합니다.
+- 난수 생성·저장 모듈과 localStorage 키는 유지되어 같은 주소의 기존 보관함을 계속 사용합니다.

@@ -34,7 +34,7 @@ function rowMarkup(game, index, stored = false) {
   const key = gameKey(game);
   const letter = String.fromCharCode(65 + index);
   const name = `${labels[game.type]} ${stored ? formatGame(game) : letter + '게임'}`;
-  return `<div class="game-row" data-key="${key}"><div class="game-row-main"><span class="game-label" aria-hidden="true">${stored ? '★' : letter}</span><div class="number-display" role="img" aria-label="${formatGame(game)}">${numberMarkup(game)}</div></div><div class="row-bottom">${stored ? `<time class="saved-date" datetime="${new Date(game.createdAt).toISOString()}">${dateFormat.format(new Date(game.createdAt))} 저장</time>` : ''}<button class="row-button" data-action="copy" data-type="${game.type}" data-index="${index}" data-stored="${stored}" aria-label="${name} 복사"><span aria-hidden="true">⧉</span> 복사</button>${stored ? `<button class="row-button danger" data-action="delete" data-key="${key}" aria-label="${name} 삭제">삭제</button>` : `<button class="row-button" data-action="save" data-type="${game.type}" data-index="${index}" aria-pressed="false" aria-label="${name} 저장"><span aria-hidden="true">♡</span> 저장</button>`}</div></div>`;
+  return `<div class="game-row" data-kind="${game.type}" data-key="${key}"><div class="game-row-main"><span class="game-label" aria-hidden="true">${stored ? '★' : letter}</span><div class="number-display" role="img" aria-label="${formatGame(game)}">${numberMarkup(game)}</div></div><div class="row-bottom">${stored ? `<time class="saved-date" datetime="${new Date(game.createdAt).toISOString()}">${dateFormat.format(new Date(game.createdAt))} 저장</time>` : ''}<button class="row-button" data-action="copy" data-type="${game.type}" data-index="${index}" data-stored="${stored}" aria-label="${name} 복사"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#copy"></use></svg> 복사</button>${stored ? `<button class="row-button danger" data-action="delete" data-key="${key}" aria-label="${name} 삭제">삭제</button>` : `<button class="row-button" data-action="save" data-type="${game.type}" data-index="${index}" aria-pressed="false" aria-label="${name} 저장"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#bookmark"></use></svg> 저장</button>`}</div></div>`;
 }
 
 function updateSavedButtons() {
@@ -42,7 +42,7 @@ function updateSavedButtons() {
     const game = generated[button.dataset.type][Number(button.dataset.index)];
     const exists = saved.some(entry => gameKey(entry) === gameKey(game));
     button.setAttribute('aria-pressed', String(exists));
-    button.innerHTML = exists ? '<span aria-hidden="true">✓</span> 저장됨' : '<span aria-hidden="true">♡</span> 저장';
+    button.innerHTML = exists ? '<svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#check"></use></svg> 저장됨' : '<svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#bookmark"></use></svg> 저장';
   });
 }
 
@@ -53,7 +53,7 @@ function renderSaved() {
   $('#clear-saved').disabled = entries.length === 0;
   $('#clear-saved').textContent = `${labels[activeTab]} 전체 삭제`;
   $('#saved-panel').setAttribute('aria-labelledby', `tab-${activeTab}`);
-  $('#saved-panel').innerHTML = entries.length ? `<div class="saved-list">${entries.map((entry, i) => rowMarkup(entry, i, true)).join('')}</div>` : '<div class="saved-empty"><span class="empty-bookmark" aria-hidden="true">♡</span><strong>아직 보관한 번호가 없어요</strong><p>마음에 드는 번호를 저장하면 여기에 모아둘게요.</p></div>';
+  $('#saved-panel').innerHTML = entries.length ? `<div class="saved-list">${entries.map((entry, i) => rowMarkup(entry, i, true)).join('')}</div>` : '<div class="saved-empty"><span class="empty-bookmark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#bookmark"></use></svg></span><strong>아직 보관한 번호가 없어요</strong><p>마음에 드는 번호를 저장하면 여기에 모아둘게요.</p></div>';
   updateSavedButtons();
 }
 
@@ -82,7 +82,7 @@ document.querySelectorAll('[data-generate]').forEach(button => button.addEventLi
   try {
     generated[type] = generateGames(type, count);
     $(`#${type}-results`).innerHTML = generated[type].map((game, i) => rowMarkup(game, i)).join('');
-    button.innerHTML = `<span aria-hidden="true">↻</span> ${labels[type]} 번호 다시 생성하기 <span aria-hidden="true">↗</span>`;
+    button.innerHTML = `<svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#refresh"></use></svg> ${labels[type]} 번호 다시 생성하기`;
     $(`#${type}-summary`).textContent = `${count}게임 생성 완료`;
     $(`[data-copy-all="${type}"]`).hidden = false;
     updateSavedButtons();

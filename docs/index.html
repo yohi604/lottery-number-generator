@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>복권번호 생성기 | 로또 6/45 · 연금복권 720+ 무료 랜덤 번호</title>
   <meta name="description" content="로또 6/45와 연금복권 720+ 번호를 무료로 생성하세요. 1·5·10게임 생성, 번호 복사, 가입 없는 내 브라우저 보관함과 정확한 번호 규칙을 제공합니다.">
-  <meta name="theme-color" content="#127b60">
+  <meta name="theme-color" content="#0b140e">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://yohi604.github.io/lottery-number-generator/">
   <meta property="og:type" content="website">
@@ -22,20 +22,21 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
   <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/lounge.css">
   <script type="module" src="./assets/app.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">본문으로 바로가기</a>
 <header class="site-header">
   <div class="shell header-inner">
-    <a class="brand" href="./" aria-label="복권번호 생성기 홈"><span class="brand-mark" aria-hidden="true">✦</span> 복권번호 생성기</a>
-    <nav aria-label="주요 메뉴"><a href="#generators" class="nav-current">번호 생성</a><a href="#saved">내 보관함 <span id="nav-count" class="count">0</span></a><a href="#guide">이용 안내</a></nav>
+    <a class="brand" href="./" aria-label="복권번호 생성기 홈"><svg class="brand-mark" aria-hidden="true"><use href="./assets/icons.svg#clover"></use></svg> 복권번호 생성기</a>
+    <nav aria-label="주요 메뉴"><a href="#generators" class="nav-current"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#dice"></use></svg>번호 생성</a><a href="#saved"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#folder"></use></svg>내 보관함 <span id="nav-count" class="count">0</span></a><a href="#guide"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#info"></use></svg>이용 안내</a></nav>
   </div>
 </header>
 <main id="main" class="shell">
   <section class="hero" aria-labelledby="page-title">
-    <span class="eyebrow"><span aria-hidden="true">✦</span> 가볍게 누르는, 오늘의 작은 즐거움</span>
-    <h1 id="page-title">복권번호 생성기</h1>
+    <div class="hero-emblem" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#crown"></use></svg></div>
+    <div class="hero-title"><svg class="laurel" aria-hidden="true"><use href="./assets/icons.svg#laurel"></use></svg><h1 id="page-title">복권번호 생성기</h1><svg class="laurel laurel-right" aria-hidden="true"><use href="./assets/icons.svg#laurel"></use></svg></div>
     <p>오늘의 행운을 재미로 만들어보세요.</p>
     <div class="hero-features"><span>무료로 간편하게</span><i aria-hidden="true"></i><span>가입 없이 바로</span><i aria-hidden="true"></i><span>내 브라우저에 저장</span></div>
   </section>
@@ -48,7 +49,7 @@
       <div class="card-heading"><div><span class="category-label">LOTTO 6/45</span><h2 id="lotto-title">로또 6/45 <span>번호 생성기</span></h2></div><span class="card-icon" aria-hidden="true">6<span>/45</span></span></div>
       <p class="card-description">1부터 45까지, 중복 없이 6개의 숫자.</p>
       <fieldset class="game-options"><legend>생성할 게임 수</legend><div class="segmented"><label><input type="radio" name="lotto-count" value="1" checked><span>1게임</span></label><label><input type="radio" name="lotto-count" value="5"><span>5게임</span></label><label><input type="radio" name="lotto-count" value="10"><span>10게임</span></label></div></fieldset>
-      <button class="generate-button" data-generate="lotto"><span aria-hidden="true">✦</span> 로또 번호 생성하기 <span aria-hidden="true">↗</span></button>
+      <button class="generate-button" data-generate="lotto"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#dice"></use></svg> 로또 번호 생성하기</button>
       <div class="results" id="lotto-results" aria-label="생성된 로또 번호"><div class="empty-result"><div class="placeholder-balls" aria-hidden="true"><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i></div><p>버튼을 누르면 나만의 번호가 나타나요.</p></div></div>
       <div class="result-summary"><span id="lotto-summary" role="status">번호를 생성할 준비가 되었어요</span><button class="text-button" data-copy-all="lotto" hidden>전체 복사</button></div>
       <p class="card-footnote"><span aria-hidden="true">✓</span> 중복 없는 6개 번호 · 오름차순 정렬</p>
@@ -58,19 +59,19 @@
       <div class="card-heading"><div><span class="category-label">PENSION 720+</span><h2 id="pension-title">연금복권 720+ <span>번호 생성기</span></h2></div><span class="card-icon ticket-icon" aria-hidden="true">720<span>+</span></span></div>
       <p class="card-description">1~5조와 여섯 자리 숫자를 각각 무작위로.</p>
       <fieldset class="game-options"><legend>생성할 게임 수</legend><div class="segmented"><label><input type="radio" name="pension-count" value="1" checked><span>1게임</span></label><label><input type="radio" name="pension-count" value="5"><span>5게임</span></label><label><input type="radio" name="pension-count" value="10"><span>10게임</span></label></div></fieldset>
-      <button class="generate-button" data-generate="pension"><span aria-hidden="true">✦</span> 연금복권 번호 생성하기 <span aria-hidden="true">↗</span></button>
+      <button class="generate-button" data-generate="pension"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#dice"></use></svg> 연금복권 번호 생성하기</button>
       <div class="results" id="pension-results" aria-label="생성된 연금복권 번호"><div class="empty-result"><div class="placeholder-digits" aria-hidden="true"><b>?조</b><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i></div><p>여섯 자리의 작은 설렘을 만들어보세요.</p></div></div>
       <div class="result-summary"><span id="pension-summary" role="status">번호를 생성할 준비가 되었어요</span><button class="text-button" data-copy-all="pension" hidden>전체 복사</button></div>
       <p class="card-footnote"><span aria-hidden="true">✓</span> 앞자리 0 가능 · 같은 숫자 반복 가능</p>
     </section>
   </div>
-  <p class="fairness-note"><span aria-hidden="true">ⓘ</span> 모든 유효한 번호 조합의 당첨 확률은 같아요. 가벼운 재미로 이용해 주세요.</p>
+  <p class="fairness-note"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#info"></use></svg><span>본 사이트는 동행복권의 공식 서비스가 아니며, 번호 생성 기능은 오락과 편의를 위한 것입니다. 모든 유효한 번호 조합의 당첨 확률은 동일하며, 번호 생성 방식이 당첨 가능성을 높여주지 않습니다.</span></p>
 
   <section class="saved-section" id="saved" aria-labelledby="saved-title">
     <div class="section-heading"><div><span class="section-kicker">MY NUMBERS</span><h2 id="saved-title">마음에 드는 번호, 내 보관함 <span id="saved-total" class="count">0</span></h2></div><span class="local-badge">이 브라우저에만 저장</span></div>
     <p class="section-description">생성된 번호 옆의 저장 버튼을 눌러 보관하세요.</p>
     <div class="saved-toolbar"><div class="saved-tabs" role="tablist" aria-label="복권별 보관함"><button id="tab-lotto" role="tab" aria-selected="true" aria-controls="saved-panel" data-tab="lotto">로또 6/45 <span id="lotto-count">0</span></button><button id="tab-pension" role="tab" aria-selected="false" aria-controls="saved-panel" tabindex="-1" data-tab="pension">연금복권 720+ <span id="pension-count">0</span></button></div><button id="clear-saved" class="text-button danger" disabled>로또 전체 삭제</button></div>
-    <div id="saved-panel" role="tabpanel" aria-labelledby="tab-lotto" tabindex="0"><div class="saved-empty"><span class="empty-bookmark" aria-hidden="true">♡</span><strong>아직 보관한 번호가 없어요</strong><p>마음에 드는 번호를 저장하면 여기에 모아둘게요.</p></div></div>
+    <div id="saved-panel" role="tabpanel" aria-labelledby="tab-lotto" tabindex="0"><div class="saved-empty"><span class="empty-bookmark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#bookmark"></use></svg></span><strong>아직 보관한 번호가 없어요</strong><p>마음에 드는 번호를 저장하면 여기에 모아둘게요.</p></div></div>
     <p class="storage-note">저장한 번호는 같은 기기·같은 브라우저에서 확인할 수 있어요. 브라우저 데이터를 지우거나 시크릿 창을 닫으면 사라질 수 있습니다.</p>
   </section>
 
@@ -92,7 +93,7 @@
     <details><summary>번호를 저장하면 복권이 구매되나요?</summary><p>아니요. 번호 생성·복사·저장은 기록을 위한 기능일 뿐입니다. 복권 판매, 결제, 베팅, 구매 예약, 당첨 확인 기능은 제공하지 않습니다.</p></details>
   </section>
 </main>
-<footer class="site-footer"><div class="shell"><div class="footer-top"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">✦</span> 복권번호 생성기</a><nav aria-label="하단 메뉴"><a href="./about.html">서비스 소개</a><a href="./privacy.html">개인정보 처리 안내</a><a href="https://github.com/yohi604/lottery-number-generator" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div><p>본 사이트는 동행복권의 공식 서비스가 아니며, 번호 생성 기능은 오락과 편의를 위한 것입니다. 모든 유효한 번호 조합의 당첨 확률은 동일하며, 번호 생성 방식이 당첨 가능성을 높여주지 않습니다.</p><small>무료 번호 생성 도구 · 광고 없는 공개 테스트 버전</small></div></footer>
+<footer class="site-footer"><div class="shell"><div class="footer-top"><a class="brand" href="./"><svg class="brand-mark" aria-hidden="true"><use href="./assets/icons.svg#clover"></use></svg> 복권번호 생성기</a><nav aria-label="하단 메뉴"><a href="./about.html">서비스 소개</a><a href="./privacy.html">개인정보 처리 안내</a><a href="https://github.com/yohi604/lottery-number-generator" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div><p>본 사이트는 동행복권의 공식 서비스가 아니며, 번호 생성 기능은 오락과 편의를 위한 것입니다. 모든 유효한 번호 조합의 당첨 확률은 동일하며, 번호 생성 방식이 당첨 가능성을 높여주지 않습니다.</p><small>무료 번호 생성 도구 · 광고 없는 공개 테스트 버전</small></div></footer>
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 <dialog id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-description"><h2 id="delete-title">보관함을 비울까요?</h2><p id="delete-description"></p><div class="dialog-actions"><button id="cancel-delete" class="secondary-button" autofocus>취소</button><button id="confirm-delete" class="danger-button">전체 삭제</button></div></dialog>
 <dialog id="copy-dialog" aria-labelledby="copy-title"><h2 id="copy-title">번호를 직접 복사해 주세요</h2><p>자동 복사가 차단되었어요. 아래 번호를 길게 누르거나 선택한 뒤 복사해 주세요.</p><textarea id="manual-copy" readonly aria-label="복사할 번호" rows="6"></textarea><button id="close-copy" class="secondary-button">닫기</button></dialog>
