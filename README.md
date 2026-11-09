@@ -2,10 +2,14 @@
 
 로또 6/45와 연금복권 720+ 번호를 생성·복사하고 현재 브라우저에 저장하는 무료 정적 웹사이트입니다. 복권 판매·결제·베팅·구매 예약·당첨 예측 서비스가 아닙니다.
 
-- 배포 대상: https://yohi604.github.io/lottery-number-generator/
-- 저장소 대상: https://github.com/yohi604/lottery-number-generator
+- 공개 사이트: https://yohi604.github.io/lottery-number-generator/
+- GitHub 저장소: https://github.com/yohi604/lottery-number-generator
 - HTML / CSS / JavaScript, 빌드·서버·외부 API·유료 서비스 없음
 - 공개 테스트용 GitHub Pages. 광고·분석 스크립트 없음
+
+## 공개 및 검증 상태
+
+2026-11-09 GitHub Pages `main /docs` 배포 완료. 공개 URL에서 생성·복사·저장·새로고침 유지·삭제를 확인했습니다. 자동 테스트 10개와 총 20,000게임 형식 검증도 통과했습니다. 실제 휴대폰 및 Safari 검증, Search Console 인증, 광고 승인은 수행하지 않았습니다. 자세한 내용은 [TESTING.md](TESTING.md), 운영 순서는 [LAUNCH.md](LAUNCH.md)를 참고하세요.
 
 ## 기능
 

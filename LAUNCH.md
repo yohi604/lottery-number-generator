@@ -2,7 +2,7 @@
 
 ## 1. 첫 공개
 
-README의 Pages 설정(main /docs)을 완료합니다. `https://yohi604.github.io/lottery-number-generator/`는 배포 대상 주소이며, 설정 전에는 접속되지 않습니다. 실제 공개 여부는 GitHub의 배포 상태와 직접 접속으로 확인해야 합니다.
+2026-11-09 GitHub Pages의 main /docs 설정과 첫 배포를 완료했습니다. 현재 공개 주소는 https://yohi604.github.io/lottery-number-generator/ 입니다. 이후 수정은 main에 커밋하면 다시 배포됩니다. 다른 저장소로 옮길 때는 README의 Pages 설정 순서를 따르고 새 공개 주소에 직접 접속해 확인하세요.
 
 ## 2. Google Search Console
 
