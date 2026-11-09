@@ -89,5 +89,6 @@ GitHub Free의 Pages는 공개 저장소에서 사용합니다. `.nojekyll`은 �
 
 - 기본 레이아웃은 `docs/assets/styles.css`, 블랙·골드 테마는 `docs/assets/lounge.css`에서 수정합니다.
 - 왕관·월계수·클로버·버튼 아이콘은 `docs/assets/icons.svg`의 벡터로 표현합니다. 번호 공과 연금복권 타일은 CSS이며 이미지 교체가 필요하지 않습니다.
-- 라운지 사진은 아직 사용하지 않습니다. 글자·숫자·버튼이 없는 가로 배경을 추가할 때 `docs/assets/`에 넣고 `lounge.css`의 `--lounge-image`에 해당 파일의 상대 URL을 지정하면 됩니다. 현재는 CSS 조명과 녹색 배경을 사용합니다.
+- 배경은 사용자가 제공한 라운지 이미지입니다. `docs/assets/lounge-background.webp`로 최적화했으며, 해상도는 2048×1152, 크기는 64,190바이트입니다. 원본 업로드 파일은 변경하지 않았습니다.
+- 배경을 바꾸려면 새 이미지를 `docs/assets/`에 넣고 `lounge.css`의 `--lounge-image`를 수정하세요. PC와 모바일 모두 이미지 비율을 유지하며, 하단은 사이트 배경색으로 자연스럽게 이어집니다. 메인 HTML의 이미지 preload 경로도 함께 수정합니다.
 - 난수 생성·저장 모듈과 localStorage 키는 유지되어 같은 주소의 기존 보관함을 계속 사용합니다.
